@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build: ./react_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./react_app:/usr/src/app
+    depends_on:
+      - flask
+
+  flask:
+    build: ./flask_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask_app:/usr/src/app
