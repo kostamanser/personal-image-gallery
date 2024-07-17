@@ -16,6 +16,8 @@ COPY . .
 # Build the Next.js app
 RUN npm run build
 
+VOLUME ["/app/data"]
+
 # Expose the port the app runs on
 EXPOSE 3000
 

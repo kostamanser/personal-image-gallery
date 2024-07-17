@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.9-slim'
 
 services:
   nextjs:
@@ -6,7 +6,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./react_app:/usr/src/app
+      - ./react_app:/usr/src/app  # Application code volume
+      - ./data:/app/data  # Shared data volume
     depends_on:
       - flask
 
@@ -15,4 +16,5 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./flask_app:/usr/src/app
+      - ./flask_app:/usr/src/app  # Application code volume
+      - ./data:/app/data  # Shared data volume

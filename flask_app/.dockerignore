@@ -1,0 +1,9 @@
+# Ignore all files
+*
+
+# Except these
+!requirements.txt
+!app.py
+!data/
+#!some_directory/
+
