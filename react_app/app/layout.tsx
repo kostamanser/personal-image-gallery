@@ -18,10 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <nav>
-          <ul>
+          {/* <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/upload-view">Upload and View</a></li>
-          </ul>
+          </ul> */}
         </nav>
         {children}
       </body>
