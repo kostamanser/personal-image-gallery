@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import axios from 'axios';
+import './UploadPage.css'; // Import the CSS file
+import NavBar from '../components/NavBar';
+
 
 const Upload = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -9,7 +12,8 @@ const Upload = () => {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setFile(e.target.files[0]);
+     
+        setFile(e.target.files[0]);
     }
   };
 
@@ -33,11 +37,21 @@ const Upload = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="file" onChange={handleFileChange} required />
-      <input type="text" value={description} onChange={handleDescriptionChange} placeholder="Description" required />
-      <button type="submit">Upload</button>
-    </form>
+    <div>
+      <div>
+        <NavBar />
+      </div>
+      <header className="header">
+        <h1>Upload Images</h1>
+      </header>
+      <div>
+      <form onSubmit={handleSubmit}>
+        <input type="file" onChange={handleFileChange} required />
+        <input type="text" value={description} onChange={handleDescriptionChange} placeholder="Description" required />
+        <button type="submit" className="upload-button" >Upload</button >
+      </form>
+      </div>
+    </div>
   );
 };
 
